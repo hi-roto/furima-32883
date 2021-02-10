@@ -29,7 +29,7 @@
 | region             | string     | null: false                    |
 | preparation_day_id | integer    | null: false                    |
 | price              | integer    | null: false                    |
-| saler_id           | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
