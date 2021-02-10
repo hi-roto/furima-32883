@@ -56,18 +56,8 @@
 | city             | string     | null: false                    |
 | house_number     | integer    | null: false                    |
 | phone_number     | integer    | null: false                    |
-| purchase_id      | references | null: false, foreign_key: true |
+| building_name    | string     |                                |
+| purchase_record  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :purchase_record
-- has_one :shipping_building
-
-## shipping_building テーブル
-
-| Column         | Type       | Options                        |
-| ------------   | ---------- | ------------------------------ |
-| building_name  | string     | null: false                    |
-| shipping_id    | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :shipping
