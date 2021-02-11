@@ -26,7 +26,7 @@
 | category_id        | integer    | null: false                    |
 | item_status_id     | integer    | null: false                    |
 | postage_payer_id   | integer    | null: false                    |
-| region             | string     | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | preparation_day_id | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
