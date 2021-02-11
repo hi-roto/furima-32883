@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-11T06:08:35.370Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.0 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="13.10.0" etag="hrxQ-h3kJQK_p3XT145w" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-11T06:24:05.054Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.0 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="13.10.0" etag="f_6TOS4p8NQIfYVj1So0" type="embed">
     <diagram id="qewc-swAJMANq8zrz1hs" name="ページ1">
         <mxGraphModel dx="1573" dy="777" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
             <root>
@@ -334,7 +334,7 @@
                 <mxCell id="kOQKSS9SDTLxmUSwW_S4-231" value="house_number" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" parent="kOQKSS9SDTLxmUSwW_S4-230" vertex="1">
                     <mxGeometry width="110" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="kOQKSS9SDTLxmUSwW_S4-232" value="integer" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=center;spacingLeft=6;overflow=hidden;" parent="kOQKSS9SDTLxmUSwW_S4-230" vertex="1">
+                <mxCell id="kOQKSS9SDTLxmUSwW_S4-232" value="string" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=center;spacingLeft=6;overflow=hidden;" parent="kOQKSS9SDTLxmUSwW_S4-230" vertex="1">
                     <mxGeometry x="110" width="110" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="kOQKSS9SDTLxmUSwW_S4-233" value="null: false" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=center;spacingLeft=6;overflow=hidden;" parent="kOQKSS9SDTLxmUSwW_S4-230" vertex="1">
