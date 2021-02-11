@@ -45,9 +45,9 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one :shipping_adress
+- has_one :shipping_address
 
-## shipping_adresses テーブル
+## shipping_addresses テーブル
 
 | Column           | Type       | Options                        |
 | -----------------| ---------- | ------------------------------ |
