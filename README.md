@@ -21,8 +21,8 @@
 
 | Column             | Type       | Options                        |
 | -------------------| -----------| -------------------------------|
-| name          | string     | null: false                    |
-| introduct          | text       | null: false                    |
+| name               | string     | null: false                    |
+| introduction       | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | item_status_id     | integer    | null: false                    |
 | postage_payer_id   | integer    | null: false                    |
