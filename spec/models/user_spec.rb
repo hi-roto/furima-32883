@@ -60,7 +60,7 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context 'パスワードの要件を満たしていないと新規登録できないとき' do
+    context 'passwordの要件を満たしていないと新規登録できないとき' do
       it 'passwordが６文字以下だと登録できない' do
         @user.password = 'aaa12'
         @user.password_confirmation = 'aaa12'
@@ -92,11 +92,17 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context 'emailのに＠がないと新規登録できないとき' do
+    context 'emailの要件を満たしてないと新規登録できないとき' do
       it 'emailに@がない登録できない' do
         @user.email = 'test.gmail.com'
         @user.valid?
         expect(@user.errors.full_messages).to include('Email is invalid')
+      end
+      it '重複したemailは登録できない' do
+        @user.save
+        another_user = FactoryBot.build(:user, email: @user.email)
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
     end
 
