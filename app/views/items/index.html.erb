@@ -125,16 +125,11 @@
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "/items/new", class: "subtitle" %>
     <ul class='item-lists'>
-    <% unless @items.nil? %>
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    <% if @items.present? %>
       
-      <%= render partial: 'item', collection: @items %>
-        
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <%= render partial: 'item', collection: @items %>  
 
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
-     <% else %>
+    <% else %>
       <li class='list'>
         <%= link_to "#" do %>
         <div class='item-img-content'>
@@ -179,8 +174,7 @@
         </div>
         <% end %>
       </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
+
     <% end %>
     </ul>
   </div>
