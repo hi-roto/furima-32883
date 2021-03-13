@@ -23,8 +23,13 @@ RSpec.describe PurchaseRecordShippingAddress, type: :model do
         @purchase_record_shipping_address.valid?
         expect(@purchase_record_shipping_address.errors.full_messages).to include("Postal code can't be blank")
       end
+      it '郵便番号にハイフンが必要であること' do
+        @purchase_record_shipping_address.postal_code = '1234567'
+        @purchase_record_shipping_address.valid?
+        expect(@purchase_record_shipping_address.errors.full_messages).to include("Postal code Input correctly")
+      end
       it '都道府県が空では保存できない' do
-        @purchase_record_shipping_address.prefecture_id = '1'
+        @purchase_record_shipping_address.prefecture_id = 1
         @purchase_record_shipping_address.valid?
         expect(@purchase_record_shipping_address.errors.full_messages).to include('Prefecture Select')
       end
@@ -52,6 +57,16 @@ RSpec.describe PurchaseRecordShippingAddress, type: :model do
         @purchase_record_shipping_address.phone_number = '123456789101'
         @purchase_record_shipping_address.valid?
         expect(@purchase_record_shipping_address.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
+      end
+      it 'user_id(購入者)が空では保存できないこと' do
+        @purchase_record_shipping_address.user_id = ''
+        @purchase_record_shipping_address.valid?
+        expect(@purchase_record_shipping_address.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_id(商品)が空では保存できないこと' do
+        @purchase_record_shipping_address.item_id = ''
+        @purchase_record_shipping_address.valid?
+        expect(@purchase_record_shipping_address.errors.full_messages).to include("Item can't be blank")
       end
     end
   end

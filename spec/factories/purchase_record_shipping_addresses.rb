@@ -6,5 +6,7 @@ FactoryBot.define do
     house_number { Gimei.town.kanji + '1-1-1' }
     phone_number { Faker::Number.number(digits: 10) }
     token { 'tok_abcdefghijk00000000000000000' }
+    user_id { Faker::Number.digit}
+    item_id { Faker::Number.digit}
   end
 end
