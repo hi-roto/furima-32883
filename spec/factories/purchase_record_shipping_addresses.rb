@@ -6,5 +6,6 @@ FactoryBot.define do
     house_number { Gimei.town.kanji + '1-1-1' }
     phone_number { Faker::Number.number(digits: 10) }
     token { 'tok_abcdefghijk00000000000000000' }
+    building_name {Faker::JapaneseMedia::OnePiece.location}
   end
 end

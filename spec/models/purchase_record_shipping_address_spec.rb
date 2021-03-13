@@ -13,6 +13,10 @@ RSpec.describe PurchaseRecordShippingAddress, type: :model do
       it '全ての値が正しく入力することができれば保存できる' do
         expect(@purchase_record_shipping_address).to be_valid
       end
+      it '建物名が抜けていても登録できること' do
+        @purchase_record_shipping_address.building_name = ""
+        expect(@purchase_record_shipping_address).to be_valid
+      end
     end
 
     context '商品購入ができない時' do
@@ -60,6 +64,11 @@ RSpec.describe PurchaseRecordShippingAddress, type: :model do
         @purchase_record_shipping_address.phone_number = '123456789101'
         @purchase_record_shipping_address.valid?
         expect(@purchase_record_shipping_address.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
+      end
+      it '電話番号は全角数字だと登録できないこと' do
+        @purchase_record_shipping_address.phone_number = '１２３４５６７８９１０'
+        @purchase_record_shipping_address.valid?
+        expect(@purchase_record_shipping_address.errors.full_messages).to include('Phone number Input only number')
       end
       it 'user_id(購入者)が空では保存できないこと' do
         @purchase_record_shipping_address.user_id = ''
