@@ -7,7 +7,7 @@ class PurchaseRecordShippingAddress
     validates :token
     validates :postal_code, format: { with: VALID_POSTAL_CODE, message: 'Input correctly' }
     validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
-    validates :city, :house_number
+    validates :city, :house_number, :user_id, :item_id
     validates :phone_number, numericality: { only_integer: true, message: 'Input only number' }, length: { in: 10..11 }
   end
 
