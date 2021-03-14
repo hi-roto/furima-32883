@@ -47,7 +47,9 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root
-    redirect_to root_path unless current_user.id == @item.user.id
+    if (current_user.id != @item.user.id) || PurchaseRecord.find_by(item_id: params[:id]).present?
+      redirect_to root_path 
+    end
   end
 
   def set_item
