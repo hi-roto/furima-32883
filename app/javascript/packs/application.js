@@ -9,6 +9,9 @@ require("@rails/activestorage").start()
 require("channels")
 require("../price");
 require("../card");
+require("../preview");
+import 'bootstrap'
+import '../src/application.scss'
 
 
 
