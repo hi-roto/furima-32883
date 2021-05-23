@@ -16,10 +16,11 @@
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
+        <div id="image-list"></div>
         <p>
-          クリックしてファイルをアップロード
+          クリックしてファイルをアップロード（最大４枚まで）
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :images, name: 'item[images][]', id:"item-image", multiple: true %>
       </div>
     </div>
     <%# /出品画像 %>
