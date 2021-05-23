@@ -7,13 +7,45 @@
       <%= @item.name %>
     </h2>
     <div class="item-img-content">
-      <%= image_tag @item.image ,class:"item-box-img" %>
-      <% if @item.purchase_record.present? %>
-        <div class="sold-out">
-          <span>Sold Out!!</span>
+      <div id="carouselControls" class="carousel slide" data-ride="carousel">
+        <div id="crouselElement" class="carousel-inner">
+          <div class="carousel-item active">
+              <%= image_tag @item.images[0] ,class:"item-box-img" %>
+          </div>
+          <% if @item.images.length >= 2 %>
+              <div class="carousel-item">
+                <%= image_tag @item.images[1] ,class:"item-box-img" %>
+              </div> 
+              <% if @item.images.length >= 3 %>
+              <div class="carousel-item"> 
+                  <%= image_tag @item.images[2] ,class:"item-box-img" %>
+              </div>
+              <%end%>
+              <% if @item.images.length >= 4 %>
+              <div class="carousel-item"> 
+                  <%= image_tag @item.images[3] ,class:"item-box-img" %>
+              </div>
+              <%end%>
+          <%end%>
         </div>
-      <% end %>
+          
+            <% if @item.purchase_record.present? %>
+              <div class="sold-out">
+                <span>Sold Out!!</span>
+              </div>
+            <% end %>      
+      </div>
+        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        
+        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
     </div>
+    
     <div class="item-price-box">
       <span class="item-price">
         <%= "¥ #{@item.price}" %> 
